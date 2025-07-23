@@ -1176,7 +1176,7 @@ processors:
   - rename:
       field: destination.as.organization_name
       target_field: destination.as.organization.name
-      ignore_missing: true
+      ignore_missing: true 
   - set:
       field: source.bytes
       tag: set_source_bytes
@@ -1228,7 +1228,7 @@ processors:
      description: Replace ":" in destination mac with "-"
      source: >-
        ctx.destination.mac = ctx.gigamon.ami.dst_mac.replace(":", "-").toUpperCase();
-     if: ctx.gigamon?.ami?.dst_mac != null
+     if: ctx.gigamon?.ami?.dst_mac != null  
   - remove:
       field:
         - ts
